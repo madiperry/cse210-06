@@ -48,4 +48,4 @@ class ControlActorsAction(Action):
         
         snake = cast.get_first_actor("snakes")
         snake.turn_head(self._direction)
-        snake.grow_tail(1)
+        #snake.grow_tail(1)
