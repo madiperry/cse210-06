@@ -1,3 +1,4 @@
+""" to feed the snake and give points."""
 import random
 import constants
 from game.casting.actor import Actor

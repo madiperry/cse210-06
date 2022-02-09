@@ -1,3 +1,4 @@
+"""designed to provide information for all of the current actors"""
 class Cast:
     """A collection of actors.
 

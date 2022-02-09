@@ -1,5 +1,5 @@
 """ Test by Jermain Lopez """
-from game.services.keyboard_service import KeyboardService
+from keyboard_service import KeyboardService
 import pytest
 import pyray
 
@@ -40,6 +40,7 @@ class Test1:
             assert key_funtion == Key_test
 
     def print_test1(self):
+        """Jermaine created this to print out what happens in the test."""
         print(self.test_is_key_up.__doc__) 
         print(self.test_is_key_down.__doc__)
 

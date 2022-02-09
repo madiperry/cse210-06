@@ -1,3 +1,4 @@
+"""the different contant variables of the game."""
 from game.shared.color import Color
 
 

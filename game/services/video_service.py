@@ -1,3 +1,4 @@
+"""without any visuals we might as well be playing a text based game."""
 import pyray
 import constants
 
@@ -88,5 +89,6 @@ class VideoService:
             pyray.draw_line(x, 0, x, constants.MAX_Y, pyray.GRAY)
     
     def _get_x_offset(self, text, font_size):
+        """as the name suggests, offsets the x postion by half of the text"""
         width = pyray.measure_text(text, font_size)
         return int(width / 2)

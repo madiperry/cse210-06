@@ -1,3 +1,5 @@
+"""Functions to start the game"""
+
 import constants
 
 from game.casting.cast import Cast
@@ -18,15 +20,21 @@ from game.shared.point import Point
 from game.casting.obstacle import Obstacle
 
 def main():
-    
+    """ start the game already"""
     # create the cast
     cast = Cast()
     #cast.add_actor("foods", Food())
     cast.add_actor("obstacles", Obstacle())
-    cast.add_actor("snakes", Snake(300,400,constants.RED,constants.BLUE))
-    cast.add_actor("snakes", Snake(500,400,constants.BLUE,constants.RED))
+    cast.add_actor("snakes", Snake(300,400,constants.RED,constants.RED))
+    cast.add_actor("snakes", Snake(500,400,constants.BLUE,constants.BLUE))
 
     cast.add_actor("scores", Score())
+    cast.add_actor("scores", Score())
+    score2 = cast.get_second_actor("scores")
+    x = int(constants.MAX_X -100)
+    y = 0
+    position = Point(x, y)
+    score2.set_position(position)
     cast.add_actor("foods", Food())
    
     # start the game

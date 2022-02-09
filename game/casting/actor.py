@@ -1,3 +1,4 @@
+"""parent class for all of the players"""
 import constants
 from game.shared.color import Color
 from game.shared.point import Point

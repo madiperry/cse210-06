@@ -1,3 +1,5 @@
+"""designed by someone from the class, we didn't touch this one."""
+
 import pyray
 #from game.shared.point import Point
 

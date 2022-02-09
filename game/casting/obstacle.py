@@ -1,3 +1,5 @@
+"""designed to take points away"""
+
 import random
 import constants
 from game.casting.actor import Actor
