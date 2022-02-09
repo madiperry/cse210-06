@@ -1,0 +1,27 @@
+We're going to be reusing a lot of last weeks code to make a racing game. 
+
+Joshua:
+	Remake the snakes/cycles into the cars (maybe make them bigger, add a sprite on top)
+	get rid of the tails.
+
+Nathan:
+	use code from the gree game 
+	Work on Obstacles - have them move the player down/back
+	Power ups - move the player up/forward
+
+
+madi:
+	Will work in the score to have 1 point added each time the player gets to the top of the screen
+	first to 10 wins
+	Game over???
+	
+	
+Ross / William:
+	will tackle adjusting the movement controls:
+	Movement will be limited to half of the screen for each player. (edit min/max y for each car)
+	No movement forward or backward. (remove the option from the keyboard controls)
+	Draw a line in the middle of the 'track' to separate the players. 
+	
+
+Jermaine:
+	Will once again take over testing functions and will do the readme for the game.
