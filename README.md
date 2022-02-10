@@ -56,4 +56,4 @@ Names/Email Addresses:
 - 💬 Madi Terwilleger....  **madiperry@byui.edu**
 - 💬 Nathan Hoskins......  **nshoskins@byui.edu**
 - 💬 William Hartfield...  **link200308@gmail.com**
-- 💬 Ross Platt..........  **lrplatt9@byui.edu**
+- 💬 Ross Platt...........  **lrplatt9@byui.edu**
