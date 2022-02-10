@@ -41,7 +41,7 @@ root                    (project root folder)
 
 ## Required Technologies
 ---
-- ![Python 3.8.0](https://img.shields.io/badge/-Python-000000?style=flat&logo=python) 
+- [![Python 3.8.0](https://img.shields.io/badge/-Python-000000?style=flat&logo=python)](https://www.python.org/)
 - ![Raylib Python CFFI 3.7](https://img.shields.io/badge/-raylib-000000?style=flat&logo=raylib)
 - [![Visual Studio Code](https://img.shields.io/badge/-VSCode-444444?style=flat&logo=visual-studio-code&logoColor=007ACC)]()
 
