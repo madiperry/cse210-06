@@ -48,3 +48,4 @@ class DrawActorsAction(Action):
         self._video_service.draw_actor(score2)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()
+        self._video_service._draw_midline()

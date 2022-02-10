@@ -3,6 +3,7 @@
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
+from game.casting.cast import Cast
 
 
 class Snake(Actor):
@@ -14,13 +15,16 @@ class Snake(Actor):
     Attributes:
         _points (int): The number of points the food is worth.
     """
-    def __init__(self, start_x,start_y,color1, color2):
+    def __init__(self, start_x,start_y,color1, color2, player):
         """init class to start things off"""
         super().__init__()
         self._segments = []
         self.color_one = color1
         self.color_two = color2
         self._prepare_body(start_x,start_y)
+        self._start_x = start_x
+        self._player = player
+
 
 
     def get_segments(self):
@@ -30,14 +34,18 @@ class Snake(Actor):
     def move_next(self):
         """get this reptile moving"""
         # move all segments
+
         for segment in self._segments:
-            segment.move_next()
-        # update velocities
+                    segment.move_next()
+                # update velocities
         for i in range(len(self._segments) - 1, 0, -1):
-            trailing = self._segments[i]
-            previous = self._segments[i - 1]
-            velocity = previous.get_velocity()
-            trailing.set_velocity(velocity)
+                trailing = self._segments[i]
+                previous = self._segments[i - 1]
+                velocity = previous.get_velocity()
+                trailing.set_velocity(velocity)
+
+
+                    
 
     def get_head(self):
         """WHERE'S THE HEAD, oh there it is."""

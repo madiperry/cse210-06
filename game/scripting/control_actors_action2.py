@@ -30,21 +30,29 @@ class ControlActorsAction2(ControlActorsAction):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
+
+        car2 = cast.get_second_actor("snakes")
+        head = car2.get_segments()[0]
+        position = head.get_position()
+        x_position = position.get_x()
+
         # left
-        if self._keyboard_service.is_key_down('j'):
-            self._direction = Point(-constants.CELL_SIZE, 0)
+        # requires player 2 to be to the right of the middle of the screen to move left
+        if 455 < x_position:
+            if self._keyboard_service.is_key_down('j'):
+                self._direction = Point(-constants.CELL_SIZE, 0)
         
         # right
-        if self._keyboard_service.is_key_down('l'):
-            self._direction = Point(constants.CELL_SIZE, 0)
+        # requires player 2 to be to the left of the right side of the screen to move right
+        if x_position < 900:
+            if self._keyboard_service.is_key_down('l'):
+                self._direction = Point(constants.CELL_SIZE, 0)
         
         # up
-        if self._keyboard_service.is_key_down('i'):
-            self._direction = Point(0, -constants.CELL_SIZE)
-        
-        # down
-        if self._keyboard_service.is_key_down('k'):
-            self._direction = Point(0, constants.CELL_SIZE)
+        # if player is not moving left or right it is moving up
+        if 445 < x_position < 900:
+            if self._keyboard_service.is_key_up('j') and self._keyboard_service.is_key_up('l'):
+                self._direction = Point(0, -constants.CELL_SIZE)
         
         snake = cast.get_second_actor("snakes")
         snake.turn_head(self._direction)

@@ -87,6 +87,17 @@ class VideoService:
             
         for x in range(0, constants.MAX_X, constants.CELL_SIZE):
             pyray.draw_line(x, 0, x, constants.MAX_Y, pyray.GRAY)
+
+
+    def _draw_midline(self):
+            """Draws a line down the middle of the screen."""
+            for y in range(0, constants.MAX_Y, (constants.CELL_SIZE * 2)):
+                pyray.draw_line(constants.MID_LEFT_X, y, constants.MID_RIGHT_X, y, pyray.WHITE)
+                
+            #for x in range(0, constants.MAX_X, constants.CELL_SIZE):
+                #pyray.draw_line(x, 0, x, constants.MAX_Y, pyray.GRAY)
+
+            
     
     def _get_x_offset(self, text, font_size):
         """as the name suggests, offsets the x postion by half of the text"""
