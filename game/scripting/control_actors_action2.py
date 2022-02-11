@@ -42,7 +42,7 @@ class ControlActorsAction2(ControlActorsAction):
         
         if self._keyboard_service.is_key_down('j'):
             if 455 < x_position:
-                self._direction = Point(-constants.CELL_SIZE, 0)
+                self._direction = Point(-constants.CELL_SIZE * 2, 0)
             else:
                 self._direction = Point(0,0)
         
@@ -50,14 +50,14 @@ class ControlActorsAction2(ControlActorsAction):
         # requires player 2 to be to the left of the right side of the screen to move right
         # when the 'l' key on the keyboard is pressed it moves the player to the right
         if self._keyboard_service.is_key_down('l'):
-            if x_position < 900:
-                self._direction = Point(constants.CELL_SIZE, 0)
+            if x_position < 890:
+                self._direction = Point(constants.CELL_SIZE * 2, 0)
             else:
                 self._direction = Point(0,0)
         
         # up
         # if player is not moving left or right it is moving up
-        if 780 < x_position < 900:
+        if 780 < x_position < 890:
             if self._keyboard_service.is_key_up('j') and self._keyboard_service.is_key_up('l'):
                 self._direction = Point(0, -1)
         elif 570 < x_position < 781:

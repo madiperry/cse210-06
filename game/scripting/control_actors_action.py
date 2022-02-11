@@ -47,7 +47,7 @@ class ControlActorsAction(Action):
         
         if self._keyboard_service.is_key_down('a'):
             if 0 < x_position:
-                self._direction = Point(-constants.CELL_SIZE, 0)
+                self._direction = Point(-constants.CELL_SIZE * 2, 0)
             else:
                 self._direction = Point(0,0)
         
@@ -57,7 +57,7 @@ class ControlActorsAction(Action):
         
         if self._keyboard_service.is_key_down('d'):
             if x_position < 445:
-                self._direction = Point(constants.CELL_SIZE, 0)
+                self._direction = Point(constants.CELL_SIZE * 2, 0)
             else:
                 self._direction = Point(0,0)
 
