@@ -40,19 +40,21 @@ class ControlActorsAction(Action):
 
         # left
         # requires player 1 to be to the right of the left side of the screen to move left
+        # when the 'a' key on the keyboard is pressed it moves the player to the left
         if 1 < x_position:
             if self._keyboard_service.is_key_down('a'):
                 self._direction = Point(-constants.CELL_SIZE, 0)
         
         # right
         # requires player 1 to be to the left of the middle of the screen to move right
+        # when the 'd' key on the keyboard is pressed it moves the player to the right
         if x_position < 445:
             if self._keyboard_service.is_key_down('d'):
                 self._direction = Point(constants.CELL_SIZE, 0)
 
 
         # up
-        # if player is not moving left or right it is moving up
+        # if player is not moving left or right it is moving up automatically
         if 0 < x_position < 445:
             if self._keyboard_service.is_key_up('a') and self._keyboard_service.is_key_up('d'):
                 self._direction = Point(0, -constants.CELL_SIZE)

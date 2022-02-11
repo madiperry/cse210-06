@@ -38,12 +38,14 @@ class ControlActorsAction2(ControlActorsAction):
 
         # left
         # requires player 2 to be to the right of the middle of the screen to move left
+        # when the 'j' key on the keyboard is pressed it moves the player to the left
         if 455 < x_position:
             if self._keyboard_service.is_key_down('j'):
                 self._direction = Point(-constants.CELL_SIZE, 0)
         
         # right
         # requires player 2 to be to the left of the right side of the screen to move right
+        # when the 'l' key on the keyboard is pressed it moves the player to the right
         if x_position < 900:
             if self._keyboard_service.is_key_down('l'):
                 self._direction = Point(constants.CELL_SIZE, 0)
