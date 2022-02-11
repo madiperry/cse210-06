@@ -39,22 +39,33 @@ class ControlActorsAction2(ControlActorsAction):
         # left
         # requires player 2 to be to the right of the middle of the screen to move left
         # when the 'j' key on the keyboard is pressed it moves the player to the left
-        if 455 < x_position:
-            if self._keyboard_service.is_key_down('j'):
+        
+        if self._keyboard_service.is_key_down('j'):
+            if 455 < x_position:
                 self._direction = Point(-constants.CELL_SIZE, 0)
+            else:
+                self._direction = Point(0,0)
         
         # right
         # requires player 2 to be to the left of the right side of the screen to move right
         # when the 'l' key on the keyboard is pressed it moves the player to the right
-        if x_position < 900:
-            if self._keyboard_service.is_key_down('l'):
+        if self._keyboard_service.is_key_down('l'):
+            if x_position < 900:
                 self._direction = Point(constants.CELL_SIZE, 0)
+            else:
+                self._direction = Point(0,0)
         
         # up
         # if player is not moving left or right it is moving up
-        if 445 < x_position < 900:
+        if 780 < x_position < 900:
+            if self._keyboard_service.is_key_up('j') and self._keyboard_service.is_key_up('l'):
+                self._direction = Point(0, -1)
+        elif 570 < x_position < 781:
             if self._keyboard_service.is_key_up('j') and self._keyboard_service.is_key_up('l'):
                 self._direction = Point(0, -constants.CELL_SIZE)
+        elif 456 < x_position < 569:
+            if self._keyboard_service.is_key_up('j') and self._keyboard_service.is_key_up('l'):
+                self._direction = Point(0, -1)
         
         snake = cast.get_second_actor("snakes")
         snake.turn_head(self._direction)
