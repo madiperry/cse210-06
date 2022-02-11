@@ -74,15 +74,15 @@ class HandleCollisionsAction(Action):
         score1 = cast.get_first_actor("scores")
         score2 = cast.get_second_actor("scores")
         snake = cast.get_first_actor("snakes")
-        snake2 = cast.get_second_actor("snakes")   # added
-        top = cast.get_first_actor("top")
+        snake2 = cast.get_second_actor("snakes")  
+        top = MAX_Y
        
         
-        if snake.get_position().equals(top.get_position()):
+        if snake.get_position().equals(top):
              points = top.get_points()
              score1.add_points(points)
              
-        if snake2.get_position().equals(top.get_position()):
+        if snake2.get_position().equals(top):
              points = top.get_points()
              score2.add_points(points)
 
