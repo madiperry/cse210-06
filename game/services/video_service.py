@@ -1,7 +1,7 @@
 """without any visuals we might as well be playing a text based game."""
 import pyray
 import constants
-
+from game.services.map import Background
 
 class VideoService:
     """Outputs the game state. The responsibility of the class of objects is to draw the game state 
@@ -26,6 +26,10 @@ class VideoService:
         """
         pyray.begin_drawing()
         pyray.clear_background(pyray.BLACK)
+        
+        Background()._draw_grid()  #MODIFIC
+        Background().draw_lines()
+        
         if self._debug == True:
             self._draw_grid()
     
