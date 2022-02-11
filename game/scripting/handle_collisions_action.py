@@ -65,7 +65,26 @@ class HandleCollisionsAction(Action):
             score2.add_points(points)                                # added       
             obstacle.reset()                                        # added         
 
-
+    def _handle_top_collision(self, cast):
+        """Updates the score when car collides with the top of screen.
+        
+        Args:
+            cast (Cast): The cast of Actors in the game.
+        """
+        score1 = cast.get_first_actor("scores")
+        score2 = cast.get_second_actor("scores")
+        snake = cast.get_first_actor("snakes")
+        snake2 = cast.get_second_actor("snakes")   # added
+        top = cast.get_first_actor("top")
+       
+        
+        if snake.get_position().equals(top.get_position()):
+             points = top.get_points()
+             score1.add_points(points)
+             
+        if snake2.get_position().equals(top.get_position()):
+             points = top.get_points()
+             score2.add_points(points)
 
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
@@ -125,16 +144,12 @@ class HandleCollisionsAction(Action):
                     self.winner = 2
 
 
-
-
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.
         
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        
-        
         
         if self._is_game_over:
             snake = cast.get_first_actor("snakes")
