@@ -35,28 +35,14 @@ class Background:
         self.X = random.randint(0, 1)
         if self.X == 0:
             for y in range(0, 600, 100):
-                    #pyray.draw_rectangle(y, 0, y, self._height, pyray.GRAY)
-                    #pyray.draw_line(0, y, self._width, y, pyray.GRAY)
                 pyray.draw_line_bezier((210, y), (210, 30 +  y), 8, pyray.WHITE )
         if self.X == 1:
             for y in range(50 , 600, 100):
-                    #pyray.draw_rectangle(y, 0, y, self._height, pyray.GRAY)
-                    #pyray.draw_line(0, y, self._width, y, pyray.GRAY)
                 pyray.draw_line_bezier((210, y), (210,  30 + y), 10, pyray.WHITE )
-                #for x in range9(0, self._width, self._cell_size):
-                    #pyray.draw_rectangle(x, 0, x, self._height, pyray.GRAY)
-                    #pyray.draw_line(x, 0, x, self._height, pyray.GRAY)
                     
         if self.X == 0:
             for y in range(0, 600, 100):
-                    #pyray.draw_rectangle(y, 0, y, self._height, pyray.GRAY)
-                    #pyray.draw_line(0, y, self._width, y, pyray.GRAY)
                 pyray.draw_line_bezier((680, y), (680, 30 +  y), 8, pyray.WHITE )
         if self.X == 1:
             for y in range(50 , 600, 100):
-                    #pyray.draw_rectangle(y, 0, y, self._height, pyray.GRAY)
-                    #pyray.draw_line(0, y, self._width, y, pyray.GRAY)
                 pyray.draw_line_bezier((680, y), (680,  30 + y), 10, pyray.WHITE )
-                #for x in range9(0, self._width, self._cell_size):
-                    #pyray.draw_rectangle(x, 0, x, self._height, pyray.GRAY)
-                    #pyray.draw_line(x, 0, x, self._height, pyray.GRAY)
