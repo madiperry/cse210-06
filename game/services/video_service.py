@@ -50,7 +50,10 @@ class VideoService:
             offset = int(width / 2)
             x -= offset
             
-        pyray.draw_text(text, x, y, font_size, color)
+        if "Score" in text:
+            pyray.draw_text(text, x, y, font_size, color)
+        else:
+            self._draw_car_obstacle(x, y)
         
     def draw_actors(self, actors, centered=False):
         """Draws the text for the given list of actors on the screen.
@@ -59,7 +62,10 @@ class VideoService:
             actors (list): A list of actors to draw.
         """ 
         for actor in actors:
-            self.draw_actor(actor, centered)
+            if actor.get_text() == "3":
+                self.draw_actor2(actor, centered) #MODIFY
+            else:
+                self.draw_actor(actor, centered)
     
     def flush_buffer(self):
         """Copies the buffer contents to the screen. This method should be called at the end of
@@ -100,10 +106,36 @@ class VideoService:
                 
             #for x in range(0, constants.MAX_X, constants.CELL_SIZE):
                 #pyray.draw_line(x, 0, x, constants.MAX_Y, pyray.GRAY)
+                
+    def _draw_car(self, x, y):
+        self.new_x = x
+        self.new_y = y
+        Background().draw_car(self.new_x, self.new_y)
 
-            
+    def _draw_car_obstacle(self, x, y):
+        self.new_x = x
+        self.new_y = y
+        Background().draw_car_obstacle(self.new_x, self.new_y)        
     
     def _get_x_offset(self, text, font_size):
         """as the name suggests, offsets the x postion by half of the text"""
         width = pyray.measure_text(text, font_size)
         return int(width / 2)
+    
+    def draw_actor2(self, actor, centered=False):
+        """Draws the given actor's text on the screen.
+
+        Args:
+            actor (Actor): The actor to draw.
+        """ 
+        text = actor.get_text()
+        x = actor.get_position().get_x()
+        y = actor.get_position().get_y()
+        font_size = actor.get_font_size()
+        color = actor.get_color().to_tuple()
+
+        if centered:
+            width = pyray.measure_text(text, font_size)
+            offset = int(width / 2)
+            x -= offset
+        self._draw_car(x, y)
