@@ -1,10 +1,10 @@
 """A class by Nathan S. Hoskins
 This class creates a power-up for who ever picks it up"""
-from food import Food
 import constants
+from game.casting.food import Food
 from game.shared.point import Point
 
-class Nitro (Food):
+class Nitro(Food):
     def __init__(self):
         """Sets up the new information"""
         super().__init__()

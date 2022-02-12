@@ -22,5 +22,6 @@ class MoveActorsAction(Action):
         #snake1 = cast.
         #snake2 = cast.
         for actor in actors:
+            print(actor)
             actor.move_next()
             #snake.grow_tail(points)
