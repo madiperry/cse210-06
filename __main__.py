@@ -25,8 +25,8 @@ def main():
     """ start the game already"""
     # create the cast
     cast = Cast()
-    #cast.add_actor("foods", Food())
-    cast.add_actor("obstacles", Obstacle())
+    cast.add_actor("nitros", Nitro())
+    cast.add_actor("obstacles", Blockage())
     cast.add_actor("snakes", Snake(205,400,constants.RED,constants.RED, 'player1'))
     cast.add_actor("snakes", Snake(675,400,constants.BLUE,constants.BLUE, 'player2'))
 
@@ -37,7 +37,7 @@ def main():
     y = 0
     position = Point(x, y)
     score2.set_position(position)
-    cast.add_actor("foods", Food())
+    #cast.add_actor("foods", Food())
    
     # start the game
     keyboard_service = KeyboardService()
