@@ -26,8 +26,8 @@ def main():
     cast = Cast()
     #cast.add_actor("foods", Food())
     cast.add_actor("obstacles", Obstacle())
-    cast.add_actor("snakes", Snake(300,400,constants.RED,constants.RED, 'player1'))
-    cast.add_actor("snakes", Snake(500,400,constants.BLUE,constants.BLUE, 'player2'))
+    cast.add_actor("snakes", Snake(250,constants.MAX_Y,constants.RED,constants.RED, 'player1'))
+    cast.add_actor("snakes", Snake(650,constants.MAX_Y,constants.BLUE,constants.BLUE, 'player2'))
 
     cast.add_actor("nitros", Nitro())
     cast.add_actor("scores", Score())
