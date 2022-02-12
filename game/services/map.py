@@ -1,3 +1,4 @@
+""" Background by Jermain Lopez """
 import pyray
 import random
 
@@ -46,3 +47,36 @@ class Background:
         if self.X == 1:
             for y in range(50 , 600, 100):
                 pyray.draw_line_bezier((680, y), (680,  30 + y), 10, pyray.WHITE )
+
+                
+    def draw_car(self, x , y):
+        self.new_x = x
+        self.new_y = y
+        pyray.draw_line_bezier((self.new_x, self.new_y -20 ), (self.new_x,  self.new_y), 20, pyray.RED)
+        pyray.draw_line_bezier((self.new_x-20, self.new_y ), (self.new_x-20, self.new_y+20), 10, pyray.BLACK)
+        pyray.draw_line_bezier((self.new_x+20,  self.new_y), (self.new_x+20 , self.new_y+20), 10, pyray.BLACK)
+        pyray.draw_line_bezier((self.new_x-20, self.new_y+30 ), (self.new_x-20, self.new_y+50), 10, pyray.BLACK)
+        pyray.draw_line_bezier((self.new_x+20, self.new_y+30 ), (self.new_x+20, self.new_y+50), 10, pyray.BLACK)  
+        pyray.draw_line_bezier((self.new_x , self.new_y ), ( self.new_x , self.new_y + 50 ), 30, pyray.RED)
+        pyray.draw_line_bezier(( self.new_x , self.new_y-15 ), (self.new_x , self.new_y), 25, pyray.RED)
+        pyray.draw_line_bezier((self.new_x, self.new_y-5 ), (self.new_x , self.new_y+8), 22, pyray.BLUE)
+        pyray.draw_line_bezier((self.new_x-5  , self.new_y+15), (self.new_x-5 , self.new_y+45), 8, pyray.BLUE)
+        pyray.draw_line_bezier((self.new_x+5, self.new_y+15), (self.new_x+5 , self.new_y+45), 8, pyray.BLUE)
+        pyray.draw_line_bezier((self.new_x , self.new_y+27), (self.new_x , self.new_y+33), 30, pyray.RED)
+
+
+    def draw_car_obstacle(self, x , y):
+        self.new_x = x
+        self.new_y = y
+        pyray.draw_line_bezier((self.new_x, self.new_y -20 ), (self.new_x,  self.new_y), 20, pyray.YELLOW)
+        pyray.draw_line_bezier((self.new_x-20, self.new_y ), (self.new_x-20, self.new_y+20), 10, pyray.BLACK)
+        pyray.draw_line_bezier((self.new_x+20,  self.new_y), (self.new_x+20 , self.new_y+20), 10, pyray.BLACK)
+        pyray.draw_line_bezier((self.new_x-20, self.new_y+30 ), (self.new_x-20, self.new_y+50), 10, pyray.BLACK)
+        pyray.draw_line_bezier((self.new_x+20, self.new_y+30 ), (self.new_x+20, self.new_y+50), 10, pyray.BLACK)  
+        pyray.draw_line_bezier((self.new_x , self.new_y ), ( self.new_x , self.new_y + 50 ), 30, pyray.YELLOW)
+        pyray.draw_line_bezier(( self.new_x , self.new_y-15 ), (self.new_x , self.new_y), 25, pyray.YELLOW)
+        pyray.draw_line_bezier((self.new_x, self.new_y-5 ), (self.new_x , self.new_y+8), 22, pyray.BLUE)
+        pyray.draw_line_bezier((self.new_x-5  , self.new_y+15), (self.new_x-5 , self.new_y+45), 8, pyray.BLUE)
+        pyray.draw_line_bezier((self.new_x+5, self.new_y+15), (self.new_x+5 , self.new_y+45), 8, pyray.BLUE)
+        pyray.draw_line_bezier((self.new_x , self.new_y+27), (self.new_x , self.new_y+33), 30, pyray.YELLOW)
+        pyray.draw_text("$", x - 10, y, 40, pyray.BLACK)     
