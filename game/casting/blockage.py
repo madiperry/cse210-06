@@ -10,7 +10,7 @@ class Blockage(Nitro):
         Arguments:
         Self -> The class and all of it's componets"""
         super().__init__()
-        self.speedDown = -10
+        self.speedDown = 10
     def get_bonus(self):
         """polymorphed get for speed penalty
         Arguments: none

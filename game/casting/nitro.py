@@ -8,7 +8,7 @@ class Nitro(Food):
     def __init__(self):
         """Sets up the new information"""
         super().__init__()
-        self.speedUP = 10
+        self.speedUP = -10
         self.set_color = constants.GREEN
     
     def change_bonus(self, bonus):
