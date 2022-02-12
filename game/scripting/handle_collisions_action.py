@@ -40,24 +40,21 @@ class HandleCollisionsAction(Action):
         """
         score1 = cast.get_first_actor("scores")
         score2 = cast.get_second_actor("scores")
-        food = cast.get_first_actor("foods")
+        nitro = cast.get_first_actor("nitros")
         obstacle = cast.get_first_actor("obstacles")
         snake = cast.get_first_actor("snakes")
         snake2 = cast.get_second_actor("snakes")   # added
         head = snake.get_segments()[0]
         head2 = snake2.get_segments()[0]   # added
         
-        if head.get_position().equals(food.get_position()):
-             points = food.get_points()
-             score1.add_points(points)
-             food.reset()
-        if head2.get_position().equals(food.get_position()):
-             points = food.get_points()
-             score2.add_points(points)
-             food.reset()
+        if head.get_position().equals(nitro.get_position()):
+            nitro.accelerate()
+            nitro.reset()
+        if head2.get_position().equals(nitro.get_position()):
+            nitro.accelerate()
+            nitro.reset()
         if head.get_position().equals(obstacle.get_position()):
-            points = obstacle.get_points()
-            score1.add_points(points)
+            obstacle.accelerate()
             obstacle.reset() 
 
         if head2.get_position().equals(obstacle.get_position()):   # added
