@@ -17,7 +17,7 @@ from game.services.keyboard_service import KeyboardService
 from game.services.video_service import VideoService
 from game.shared.color import Color
 from game.shared.point import Point
-from game.casting.obstacle import Obstacle
+from game.casting.blockage import Blockage
 from game.casting.nitro import Nitro
 
 def main():
@@ -25,10 +25,10 @@ def main():
     # create the cast
     cast = Cast()
     #cast.add_actor("foods", Food())
-    cast.add_actor("obstacles", Obstacle())
+    #cast.add_actor("obstacles", Obstacle())
     cast.add_actor("snakes", Snake(250,constants.MAX_Y,constants.RED,constants.RED, 'player1'))
     cast.add_actor("snakes", Snake(650,constants.MAX_Y,constants.BLUE,constants.BLUE, 'player2'))
-
+    cast.add_actor("obstacles", Blockage())
     cast.add_actor("nitros", Nitro())
     cast.add_actor("scores", Score())
     cast.add_actor("scores", Score())
