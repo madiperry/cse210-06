@@ -4,9 +4,17 @@ import random
 
 
 class Background:
+    """
+    class Background:
+    This class creates the game background for better viewing.
+    """
 
 
     def _draw_grid(self):
+        """
+        _draw_grid(self):
+        Draws a grid on the screen.
+        """
         pyray.draw_rectangle(0, 0, 100, 600, pyray.GREEN)
         pyray.draw_rectangle(100, 0, 30, 600, pyray.WHITE)
         pyray.draw_rectangle(100, 0, 5, 600, pyray.BLACK)
@@ -28,11 +36,15 @@ class Background:
         pyray.draw_rectangle(770, 0, 5, 600, pyray.BLACK)
         pyray.draw_rectangle(795, 0, 5, 600, pyray.BLACK)
         pyray.draw_rectangle(795, 0, 105, 600, pyray.GREEN)
-        #pyray.draw_line_3d((20,20,20), (40,40,40), pyray.RED)
-        """Draws a grid on the screen."""
+
         
         
     def draw_lines(self):
+        """
+        draw_lines(self):
+        This method draws the lines of the track to give visibility of the movement.
+        """
+
         self.X = random.randint(0, 1)
         if self.X == 0:
             for y in range(0, 600, 100):
@@ -50,6 +62,11 @@ class Background:
 
                 
     def draw_car(self, x , y):
+        """
+        draw_car(self, x , y):
+        This method draws both cars for the output screen.
+        """
+
         self.new_x = x
         self.new_y = y
         pyray.draw_line_bezier((self.new_x, self.new_y -20 ), (self.new_x,  self.new_y), 20, pyray.RED)
@@ -66,6 +83,10 @@ class Background:
 
 
     def draw_car_obstacle(self, x , y):
+        """
+        draw_car_obstacle(self, x , y):
+        This method draws obtacles cars for the output screen.
+        """
         self.new_x = x
         self.new_y = y
         pyray.draw_line_bezier((self.new_x, self.new_y -20 ), (self.new_x,  self.new_y), 20, pyray.YELLOW)
@@ -80,3 +101,4 @@ class Background:
         pyray.draw_line_bezier((self.new_x+5, self.new_y+15), (self.new_x+5 , self.new_y+45), 8, pyray.BLUE)
         pyray.draw_line_bezier((self.new_x , self.new_y+27), (self.new_x , self.new_y+33), 30, pyray.YELLOW)
         pyray.draw_text("$", x - 10, y, 40, pyray.BLACK)     
+    
