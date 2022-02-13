@@ -46,13 +46,13 @@ class Point:
         return self._x == other.get_x() and self._y == other.get_y()
  
     def equals2(self, y):
-        """Whether or not this Point is equal to the given one.
+        """checks the y value of the object against the top.
 
         Args:
             other (Point): The Point to compare.
 
         Returns: 
-            boolean: True if both x and y are equal; false if otherwise.
+            boolean: True if y values are equal; false if otherwise.
         """
         return self._y == y
 
