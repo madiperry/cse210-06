@@ -18,6 +18,7 @@ from game.services.video_service import VideoService
 from game.shared.color import Color
 from game.shared.point import Point
 from game.casting.blockage import Blockage
+from game.casting.obstacle import Obstacle
 from game.casting.nitro import Nitro
 
 def main():
@@ -37,7 +38,10 @@ def main():
     y = 0
     position = Point(x, y)
     score2.set_position(position)
-    cast.add_actor("foods", Food())
+    cast.add_actor("foods", Food())     
+    cast.add_actor("foods", Food())     #CHANGE
+    cast.add_actor("obstacles", Obstacle()) 
+    cast.add_actor("obstacles", Obstacle()) #CHANGE
    
     # start the game
     keyboard_service = KeyboardService()
@@ -56,3 +60,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
