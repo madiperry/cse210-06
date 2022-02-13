@@ -53,7 +53,13 @@ class Test2:
             for y in range (20):
                 self.point1 = Point(x,y)
                 assert self.point1.equals(self.point1) == True
-
+    def test_equals2(self):
+            """ testing equals2 that we wrote for laps."""
+            
+            for x in range(20):
+                for y in range (20):
+                    self.point1 = Point(x,y)
+                    assert self.point1.equals2(self.point1.get_y()) == True
     def test_scale(self):
         """
         test_scale():
@@ -102,7 +108,7 @@ class Test2:
         print(self.test_scale.__doc__) 
         print(self.test_reverse.__doc__)
         print(self.test_to_tuple.__doc__)
-
+        print(self.test_equals2.__doc__)
 test2 = Test2()
 test2.print_test2()
 pytest.main(["-v", "--tb=line", "-rN", __file__])
