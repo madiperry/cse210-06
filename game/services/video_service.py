@@ -111,11 +111,13 @@ class VideoService:
                 #pyray.draw_line(x, 0, x, constants.MAX_Y, pyray.GRAY)
                 
     def _draw_car(self, x, y):
+        """ draw the car over the 'head' """
         self.new_x = x
         self.new_y = y
         Background().draw_car(self.new_x, self.new_y)
 
     def _draw_car_obstacle(self, x, y):
+        """draw the obstacle sprite"""
         self.new_x = x
         self.new_y = y
         Background().draw_car_obstacle(self.new_x, self.new_y)        
@@ -163,5 +165,6 @@ class VideoService:
         self._draw_car(x, y)
         
     def winner(self, player):
+        """display winner message"""
         self.player = player
         return pyray.draw_text("PLAYER  " + str(self.player) + "  WIN", 75, 300, 100, pyray.VIOLET)
