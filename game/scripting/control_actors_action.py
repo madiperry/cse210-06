@@ -40,6 +40,42 @@ class ControlActorsAction(Action):
         y_position = position.get_y()
         message_position = Point(200, 225)
         
+        def reset_x_y(thishead):
+            """ when we go in the grass the cell_size get's out of sync, this is to reset the values to fix that """
+            x = thishead.get_position().get_x()
+            y = thishead.get_position().get_y()
+            if x % 10 == 1:
+                x -= 1
+            if x % 10 == 2:
+                x -= 2
+            if x % 10 == 4:
+                x += 1
+            if x % 10 == 6:
+                x -= 1
+            if x % 10 == 7:
+                x -= 2
+            if x % 10 == 8:
+                x += 2
+            if x % 10 == 9:
+                x += 1
+
+            if y % 10 == 1:
+                y -= 1
+            if y % 10 == 2:
+                y -= 2
+            if y % 10 == 4:
+                y -= 4
+            if y % 10 == 6:
+                y -= 1
+            if y % 10 == 7:
+                y -= 2
+            if y % 10 == 8:
+                y -= 3
+            if y % 10 == 9:
+                y -= 4
+
+            position = Point(x, y)
+            thishead.set_position(position) 
 
         # left
         # requires player 1 to be to the right of the left side of the screen to move left
@@ -69,7 +105,9 @@ class ControlActorsAction(Action):
             if self._keyboard_service.is_key_up('a') and self._keyboard_service.is_key_up('d'):
                 self._direction = Point(0, -1)
         elif 101 < x_position < 320:
+
             if self._keyboard_service.is_key_up('a') and self._keyboard_service.is_key_up('d'):
+                reset_x_y(head)
                 self._direction = Point(0, -constants.CELL_SIZE)
         elif 321 < x_position < 430:
             if self._keyboard_service.is_key_up('a') and self._keyboard_service.is_key_up('d'):
