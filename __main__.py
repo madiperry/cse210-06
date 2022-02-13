@@ -33,6 +33,7 @@ def main():
     cast.add_actor("nitros", Nitro())
     cast.add_actor("scores", Score())
     cast.add_actor("scores", Score())
+    score1 = cast.get_first_actor("scores")
     score2 = cast.get_second_actor("scores")
     x = int(constants.MAX_X -100)
     y = 0
@@ -42,6 +43,7 @@ def main():
     cast.add_actor("foods", Food())     #CHANGE
     cast.add_actor("obstacles", Obstacle()) 
     cast.add_actor("obstacles", Obstacle()) #CHANGE
+
    
     # start the game
     keyboard_service = KeyboardService()
@@ -56,6 +58,15 @@ def main():
     
     director = Director(video_service)
     director.start_game(cast, script)
+
+    # end the game
+    player1score = score1.get_points()
+    player2score = score2.get_points()
+
+    if player1score >= 1000:
+        video_service.winner(1)
+    if player2score >= 1000:
+        video_service.winner(2)
 
 
 if __name__ == "__main__":

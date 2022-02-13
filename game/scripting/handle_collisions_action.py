@@ -1,5 +1,6 @@
 """setting what happens when they start hitting eachother."""
 import constants
+from game.services.video_service import VideoService
 from game.casting.actor import Actor
 from game.scripting.action import Action
 from game.shared.point import Point
@@ -201,15 +202,17 @@ class HandleCollisionsAction(Action):
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x, y)
+            winnerbanner = VideoService()
 
             message = Actor()
             if self.winner == 1:
                 message.set_color(constants.RED)
                 message.set_text("Game Over! Player 1 wins!")
+                winnerbanner.winner(1)
             if self.winner == 2:
                 message.set_color(constants.BLUE)
-
                 message.set_text("Game Over! Player 2 wins!")
+                winnerbanner.winner(2)
             if self.winner == 3:
                 message.set_color(constants.YELLOW)
 
@@ -217,3 +220,4 @@ class HandleCollisionsAction(Action):
                 
             message.set_position(position)
             cast.add_actor("messages", message)
+            winnerbanner = VideoService()
