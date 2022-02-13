@@ -8,7 +8,7 @@
 </td>
 
 <td align="center" width="50%">
-<h3>It is a car game in which the player races around the track, dodging obstacles and at the same time earning points. if you feel too slow take the nitro and accelerate. the player moves from left to right to pass obstacles and win each level of the game.</h3>
+<h3>It is a car game in which the player races around the track. Earn points by completing laps or by collecting other racers. Use a combination of the two to outscore your opponent to victory.</h3>
 </td>
 </tr>
 </tbody>
