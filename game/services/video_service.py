@@ -64,8 +64,11 @@ class VideoService:
         for actor in actors:
             if actor.get_text() == "3":
                 self.draw_actor2(actor, centered) #MODIFY
-            else:
+            elif actor.get_text() == "@":
                 self.draw_actor(actor, centered)
+            elif actor.get_text() == "0":
+                self.draw_actor(actor, centered)
+
     
     def flush_buffer(self):
         """Copies the buffer contents to the screen. This method should be called at the end of
@@ -121,6 +124,25 @@ class VideoService:
         """as the name suggests, offsets the x postion by half of the text"""
         width = pyray.measure_text(text, font_size)
         return int(width / 2)
+    
+    def draw_actor2(self, actor, centered=False):
+        """Draws the given actor's text on the screen.
+
+        Args:
+            actor (Actor): The actor to draw.
+        """ 
+        text = actor.get_text()
+        x = actor.get_position().get_x()
+        y = actor.get_position().get_y()
+        font_size = actor.get_font_size()
+        color = actor.get_color().to_tuple()
+
+        if centered:
+            width = pyray.measure_text(text, font_size)
+            offset = int(width / 2)
+            x -= offset
+        self._draw_car(x, y)
+
     
     def draw_actor2(self, actor, centered=False):
         """Draws the given actor's text on the screen.
