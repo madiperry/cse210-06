@@ -161,3 +161,7 @@ class VideoService:
             offset = int(width / 2)
             x -= offset
         self._draw_car(x, y)
+        
+    def winner(self, player):
+        self.player = player
+        return pyray.draw_text("PLAYER  " + str(self.player) + "  WIN", 75, 300, 100, pyray.VIOLET)
