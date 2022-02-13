@@ -31,7 +31,10 @@ class DrawActorsAction(Action):
         score1 = cast.get_first_actor("scores")
         score2 = cast.get_second_actor("scores")
         food = cast.get_first_actor("foods")
+        food2 = cast.get_second_actor("foods") #CAHNGE
         obstacle = cast.get_first_actor("obstacles")
+        obstacle2 = cast.get_second_actor("obstacles") #CAHNGE
+        
 
         snake = cast.get_first_actor("snakes")
         snake2 = cast.get_second_actor("snakes")
@@ -41,6 +44,8 @@ class DrawActorsAction(Action):
 
         self._video_service.clear_buffer()
         self._video_service.draw_actor(food)
+        self._video_service.draw_actor(food2) #CAHNGE
+        self._video_service.draw_actor(obstacle2) #CAHNGE
         self._video_service.draw_actor(obstacle)
         self._video_service.draw_actors(segments)
         self._video_service.draw_actors(segments2)
