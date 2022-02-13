@@ -72,7 +72,7 @@ class HandleCollisionsAction(Action):
         score2 = cast.get_second_actor("scores")
         snake = cast.get_first_actor("snakes")
         snake2 = cast.get_second_actor("snakes")  
-        top = MAX_Y
+        top = constants.MAX_Y
        
         
         if snake.get_position().equals(top):
